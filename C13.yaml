@@ -1,0 +1,54 @@
+# HOVSS-PQ experiment configuration: C13
+# Template only. Do not treat unspecified values as historical settings.
+schema_version: "1.0"
+experiment:
+  id: "C13"
+  series: "C"
+  title: null
+  objective: null
+  status: unverified
+  provenance_type: proposed
+  historical_execution_verified: false
+  source_scripts: []
+  source_evidence: []
+  execution_command: null
+  random_seed: null
+inputs:
+  dataset_paths: []
+  manifest_path: metadata/manifest.csv
+  expected_sha256: {}
+  preprocessing: null
+methods:
+  construction: null
+  reconstruction_operator: null
+  verification_rule: null
+  threat_model: null
+  parameters: {}
+  baselines: []
+evaluation:
+  metrics: []
+  trial_count: null
+  repetitions: null
+  statistical_method: null
+  confidence_level: null
+outputs:
+  directory: "results/generated/C13"
+  expected_files: []
+  archived_result_paths: []
+  overwrite_existing: false
+reproducibility:
+  environment_file: environment.yml
+  requirements_file: requirements.txt
+  input_checksums_verified: false
+  results_reproduced: false
+  numerical_tolerance_absolute: null
+  numerical_tolerance_relative: null
+publication:
+  section: 5
+  tables: []
+  figures: []
+  mapping_verified: false
+notes:
+  - "Populate fields only after checking the original C13 implementation and experiment logs."
+  - "This YAML is not automatically consumed by historical scripts."
+  - "Do not confuse simulation results with physical or human-participant validation."
