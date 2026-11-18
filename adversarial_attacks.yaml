@@ -1,0 +1,570 @@
+
+# ============================================================
+# HOVSS-PQ — ADVERSARIAL ATTACKS CONFIGURATION
+# ============================================================
+#
+# File: configs/security/adversarial_attacks.yaml
+# Version: 1.0.0
+#
+# Purpose:
+# Define adversarial evaluation scenarios for visual
+# secret sharing, content integrity, challenge-based
+# verification, and reconstruction ambiguity.
+#
+# IMPORTANT:
+# This is a proposed configuration specification.
+# Historical parameters must be recovered from
+# original experimental scripts and records.
+#
+# null = parameter not yet verified
+# ============================================================
+
+schema_version: "1.0"
+
+configuration:
+  name: adversarial_attacks
+  project: HOVSS-PQ
+  version: "1.0.0"
+  status: proposed
+  provenance_type: proposed
+  historical_execution_verified: false
+
+# ------------------------------------------------------------
+# 1. EXPERIMENT IDENTIFICATION
+# ------------------------------------------------------------
+
+experiment:
+  identifier: null
+  series: null
+
+  description: >-
+    Adversarial evaluation of confidentiality,
+    reconstruction ambiguity, share substitution,
+    content modification, and adaptive verification
+    in visual secret sharing constructions.
+
+  source_scripts: []
+  source_evidence: []
+  execution_command: null
+  random_seed: null
+
+# ------------------------------------------------------------
+# 2. SECURITY EVALUATION OBJECTIVES
+# ------------------------------------------------------------
+
+objectives:
+
+  content_integrity:
+    enabled: true
+    goal: >-
+      Measure whether unauthorized modifications
+      to protected visual content are detected.
+
+  share_authenticity:
+    enabled: true
+    goal: >-
+      Evaluate resistance to unauthorized share
+      replacement and substitution.
+
+  reconstruction_ambiguity:
+    enabled: true
+    goal: >-
+      Identify distinct share configurations
+      producing equivalent reconstructed outputs.
+
+  adaptive_security:
+    enabled: true
+    goal: >-
+      Evaluate how repeated verification attempts
+      and feedback influence forgery acceptance.
+
+  confidentiality:
+    enabled: true
+    goal: >-
+      Evaluate information leakage under the
+      specified adversarial observation model.
+
+# ------------------------------------------------------------
+# 3. ADVERSARY MODEL
+# ------------------------------------------------------------
+
+adversary:
+
+  type: active
+
+  knowledge:
+    scheme_description: true
+    public_parameters: true
+
+    public_reference: null
+    private_reference: false
+    secret_shares: null
+    verification_challenge: null
+
+  capabilities:
+    - modify_share_content
+    - substitute_share
+    - replace_share
+    - manipulate_public_reference
+    - submit_candidate_forgery
+    - exploit_reconstruction_collision
+    - perform_adaptive_attempts
+
+  restrictions:
+    access_to_private_issuer_key: false
+
+    access_to_protected_reference: null
+
+    maximum_verification_attempts: null
+
+  computational_resources:
+    time_limit_seconds: null
+    memory_limit_mib: null
+
+# ------------------------------------------------------------
+# 4. ATTACK SCENARIOS
+# ------------------------------------------------------------
+
+attack_scenarios:
+
+  content_modification:
+    enabled: true
+
+    objective: >-
+      Modify protected visual content while
+      attempting to satisfy the integrity
+      verification rule.
+
+    target_constructions:
+      - masked_reference
+      - separable_tag
+      - integrated_witness
+
+    modification:
+      method: null
+      modified_pixel_count: null
+      modified_pixel_fraction: null
+
+    trials: null
+    random_seed: null
+
+    metrics:
+      - attack_acceptance_rate
+      - attack_rejection_rate
+
+  share_substitution:
+    enabled: true
+
+    objective: >-
+      Replace one or more authorized shares
+      with unauthorized alternatives.
+
+    substitution:
+      number_of_shares: null
+      selection_method: null
+
+    trials: null
+
+    metrics:
+      - false_acceptance_rate
+      - attack_acceptance_rate
+
+  reference_manipulation:
+    enabled: true
+
+    objective: >-
+      Determine whether manipulated reference
+      information can cause unauthorized
+      content to pass verification.
+
+    reference:
+      visibility: null
+      protection_mechanism: null
+
+    manipulation_method: null
+
+    trials: null
+
+    metrics:
+      - attack_acceptance_rate
+
+  reconstruction_collision:
+    enabled: true
+
+    objective: >-
+      Identify different share configurations
+      that produce identical reconstructed outputs.
+
+    reconstruction:
+      operator: null
+
+      supported_operators:
+        - OR
+        - XOR
+
+    enumeration:
+      input_domain: null
+      method: null
+      collision_definition: null
+
+    metrics:
+      - collision_count
+      - equivalent_reconstruction_count
+
+  adaptive_forgery:
+    enabled: true
+
+    objective: >-
+      Evaluate forgery acceptance when an
+      adversary can make repeated or adaptive
+      verification attempts.
+
+    challenge:
+      visibility: null
+      generation_method: null
+      entropy_bits: null
+
+    verification_oracle:
+      accessible: null
+      feedback_type: null
+
+    attempts:
+      maximum: null
+      adaptive_selection: null
+
+    trials: null
+    random_seed: null
+
+    metrics:
+      - forgery_acceptance_rate
+      - false_acceptance_rate
+
+# ------------------------------------------------------------
+# 5. CHALLENGE-BASED VERIFICATION
+# ------------------------------------------------------------
+
+challenge_verification:
+
+  enabled: true
+
+  scenarios:
+
+    single_private_challenge:
+      enabled: true
+      challenge_visibility: private
+      attempts: 1
+
+      challenge_generation: null
+      acceptance_rule: null
+
+    two_adaptive_attempts:
+      enabled: true
+      challenge_visibility: private
+      attempts: 2
+
+      adaptive_strategy: null
+      feedback_available: null
+
+    public_mask_exact_or:
+      enabled: true
+      challenge_visibility: public
+      reconstruction_operator: OR
+
+      acceptance_rule: null
+
+    black_pixel_count:
+      enabled: true
+
+      observable_statistic: black_pixel_count
+      acceptance_rule: null
+
+  evaluation:
+    repetitions: null
+    random_seed: null
+
+    metrics:
+      - forgery_acceptance_rate
+
+# ------------------------------------------------------------
+# 6. ATTACK GENERATION
+# ------------------------------------------------------------
+
+attack_generation:
+
+  method: null
+
+  sampling:
+    distribution: null
+    replacement: null
+
+  randomization:
+    random_seed: null
+    generator: null
+
+  validity:
+    require_content_change: true
+    reject_identical_candidate: true
+
+  recording:
+    save_original_sample_id: true
+    save_modified_sample_id: true
+    save_attack_type: true
+    save_verification_decision: true
+
+# ------------------------------------------------------------
+# 7. VERIFICATION CONSTRUCTIONS
+# ------------------------------------------------------------
+
+verification_constructions:
+
+  masked_reference:
+    enabled: true
+
+    reference_generation: null
+    reference_protection: null
+
+    verification_algorithm: null
+    acceptance_rule: null
+
+    formal_security_proof_available: false
+
+  separable_tag:
+    enabled: true
+
+    tag_generation: null
+    tag_placement: null
+
+    verification_algorithm: null
+    acceptance_rule: null
+
+    content_binding_proven: false
+
+  integrated_witness:
+    enabled: true
+
+    witness_generation: null
+    witness_embedding: null
+
+    verification_algorithm: null
+    acceptance_rule: null
+
+    formal_security_proof_available: false
+
+# ------------------------------------------------------------
+# 8. CONTROL EXPERIMENTS
+# ------------------------------------------------------------
+
+controls:
+
+  authorized_submissions:
+    enabled: true
+
+    purpose: >-
+      Estimate false rejection of valid
+      authorized reconstructions.
+
+    number_of_trials: null
+
+  unauthorized_submissions:
+    enabled: true
+
+    purpose: >-
+      Estimate false acceptance of invalid
+      or adversarial submissions.
+
+    number_of_trials: null
+
+  baseline_reconstruction:
+    enabled: true
+
+    purpose: >-
+      Establish reconstruction correctness
+      before adversarial modification.
+
+# ------------------------------------------------------------
+# 9. EVALUATION METRICS
+# ------------------------------------------------------------
+
+metrics:
+
+  attack_acceptance_rate:
+    numerator: accepted_adversarial_submissions
+    denominator: evaluated_adversarial_submissions
+
+  attack_rejection_rate:
+    numerator: rejected_adversarial_submissions
+    denominator: evaluated_adversarial_submissions
+
+  false_acceptance_rate:
+    numerator: invalid_submissions_accepted
+    denominator: evaluated_invalid_submissions
+
+  false_rejection_rate:
+    numerator: valid_submissions_rejected
+    denominator: evaluated_valid_submissions
+
+  forgery_acceptance_rate:
+    numerator: accepted_forgery_trials
+    denominator: evaluated_forgery_trials
+
+  collision_count:
+    definition: >-
+      Number of collisions under the specified
+      reconstruction operator, input domain,
+      and collision-counting convention.
+
+  statistical_reporting:
+    confidence_level: null
+    confidence_interval_method: null
+    bootstrap_repetitions: null
+
+# ------------------------------------------------------------
+# 10. REPORTED EXPERIMENTAL FINDINGS
+# ------------------------------------------------------------
+#
+# These are manuscript-level observations.
+# They are NOT execution parameters.
+#
+# Verify against original result files before release.
+# ------------------------------------------------------------
+
+reported_findings:
+
+  masked_reference:
+    evaluated_content_modifications: 3072
+    rejected_content_modifications: 3072
+    accepted_content_modifications: 0
+
+    attack_acceptance_rate: 0.0
+
+    scope: exact_digital_verification
+
+  separable_tag:
+    evaluated_content_modifications: 3072
+    accepted_content_modifications: 3072
+    rejected_content_modifications: 0
+
+    attack_acceptance_rate: 1.0
+
+  integrated_witness:
+    evaluated_content_modifications: 14336
+    accepted_content_modifications: 2031
+
+    attack_acceptance_rate: 0.14167131696428573
+
+  adaptive_forgery:
+    single_private_challenge:
+      acceptance_rate: 0.500
+
+    two_adaptive_attempts:
+      acceptance_rate: 0.750
+
+    public_mask_exact_or:
+      acceptance_rate: 0.875
+
+    black_pixel_count:
+      acceptance_rate: 0.984375
+
+  provenance:
+    source_scripts: []
+    source_result_files: []
+    verified_against_raw_outputs: false
+
+# ------------------------------------------------------------
+# 11. OUTPUT ARTIFACTS
+# ------------------------------------------------------------
+
+outputs:
+
+  directory: "results/generated/adversarial_attacks"
+
+  overwrite_existing_results: false
+  preserve_original_results: true
+
+  save:
+    - attack_trial_records
+    - verification_decisions
+    - attack_acceptance_statistics
+    - false_acceptance_statistics
+    - false_rejection_statistics
+    - collision_analysis
+    - experiment_metadata
+
+  formats:
+    - csv
+    - json
+
+  manifest: "metadata/manifest.csv"
+
+# ------------------------------------------------------------
+# 12. REPRODUCIBILITY
+# ------------------------------------------------------------
+
+reproducibility:
+
+  environment_file: "environment.yml"
+  requirements_file: "requirements.txt"
+
+  require_source_script: true
+  require_input_mapping: true
+  require_output_mapping: true
+
+  require_random_seed_record: true
+  require_execution_command: true
+
+  verify_input_checksums: true
+  verify_output_checksums: true
+
+  compare_with_archived_results: true
+
+  numerical_tolerance:
+    absolute: null
+    relative: null
+
+  reproduction_status: not_verified
+
+# ------------------------------------------------------------
+# 13. MANUSCRIPT TRACEABILITY
+# ------------------------------------------------------------
+
+publication:
+
+  manuscript_section: 5
+
+  related_tables:
+    - Table_2
+    - Table_3
+
+  related_figures:
+    - Figure_6
+
+  mapping_files:
+    tables: "configs/publication/tables.yaml"
+    figures: "configs/publication/figures.yaml"
+
+  mapping_verified: false
+
+# ------------------------------------------------------------
+# 14. SECURITY INTERPRETATION
+# ------------------------------------------------------------
+
+security_interpretation:
+
+  empirical_results_are_universal_proofs: false
+
+  reconstruction_implies_authenticity: false
+
+  successful_digital_verification_implies_optical_integrity: false
+
+  adaptive_attack_results_generalize_to_all_protocols: false
+
+  note: >-
+    Reported acceptance rates characterize the
+    evaluated constructions and attack models.
+    They do not establish universal security
+    guarantees or impossibility results for
+    all visual secret sharing protocols.
+
+# ============================================================
+# END OF CONFIGURATION
+# ============================================================
