@@ -1,0 +1,124 @@
+  require_metric_definitions: true
+  prohibit_unverified_values: true
+  numerical_tolerance:
+    absolute: null
+    relative: null
+
+# Map each table to verified source files before a public release.
+# "reported_findings" records manuscript-level claims, NOT input parameters.
+tables:
+  Table_2:
+    caption: null
+    subject_hint: "Security and integrity evaluation (verify manuscript mapping)"
+    mapping_status: unverified
+    experiment_ids: []
+    source_scripts: []
+    source_data: []
+    archived_results: []
+    generating_command: null
+    output_files: []
+    metric_definitions: []
+    reported_findings:
+      masked_reference:
+        public_view_total_variation_distance: 0.0
+        evaluated_content_modifications: 3072
+        rejected_content_modifications: 3072
+      separable_tag:
+        evaluated_content_modifications: 3072
+        accepted_content_modifications: 3072
+    findings_verified_against_raw_outputs: false
+    notes: >-
+      The values are previously reported manuscript observations;
+      verify which table actually contains them before release.
+
+  Table_3:
+    caption: null
+    subject_hint: "Adversarial evaluation (verify manuscript mapping)"
+    mapping_status: unverified
+    experiment_ids: []
+    source_scripts: []
+    source_data: []
+    archived_results: []
+    generating_command: null
+    output_files: []
+    metric_definitions: []
+    reported_findings:
+      adaptive_forgery:
+        single_private_challenge_acceptance_rate: 0.500
+        two_adaptive_attempts_acceptance_rate: 0.750
+    findings_verified_against_raw_outputs: false
+    notes: >-
+      Attack model, denominators, and the manuscript table assignment
+      require confirmation from the original experimental records.
+
+  Table_4:
+    caption: null
+    subject_hint: "Optical reconstruction or post-quantum checks (verify)"
+    mapping_status: unverified
+    experiment_ids: []
+    source_scripts: []
+    source_data: []
+    archived_results: []
+    generating_command: null
+    output_files: []
+    metric_definitions: []
+    reported_findings: {}
+    findings_verified_against_raw_outputs: false
+    notes: >-
+      Do not assign reconstruction or ML-DSA values to this table
+      until the manuscript caption and data are checked.
+
+  Table_5:
+    caption: null
+    subject_hint: "Experiment evaluation (verify manuscript mapping)"
+    mapping_status: unverified
+    experiment_ids: []
+    source_scripts: []
+    source_data: []
+    archived_results: []
+    generating_command: null
+    output_files: []
+    metric_definitions: []
+    reported_findings: {}
+    findings_verified_against_raw_outputs: false
+
+  Table_6:
+    caption: null
+    subject_hint: "Experiment evaluation (verify manuscript mapping)"
+    mapping_status: unverified
+    experiment_ids: []
+    source_scripts: []
+    source_data: []
+    archived_results: []
+    generating_command: null
+    output_files: []
+    metric_definitions: []
+    reported_findings: {}
+    findings_verified_against_raw_outputs: false
+
+# Candidate observations awaiting assignment to the correct manuscript table.
+unassigned_reported_findings:
+  ideal_authorized_reconstruction_pixel_agreement: 1.0
+  one_pixel_displacement_pixel_error_rate: 0.7492
+  ml_dsa_65_electronic_checks:
+    passed: 15
+    total: 15
+    optical_binding_proven: false
+  c16_synthetic_observer_benchmark:
+    images: 546
+    conditions: 9
+    synthetic_observers: 100
+    repetitions: 10
+    synthetic_decisions: 4914000
+    roc_auc: 0.998168498
+    balanced_accuracy_approximate: 0.9982
+    human_participant_study_completed: false
+
+validation:
+  yaml_syntax_validated: false
+  table_mapping_verified: false
+  source_artifacts_verified: false
+  outputs_reproduced: false
+  reviewer_note: >-
+    Do not mark the table mappings or results as verified until source
+    artifacts, execution commands, and final manuscript numbering are checked.
