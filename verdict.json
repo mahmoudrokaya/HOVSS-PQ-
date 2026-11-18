@@ -1,0 +1,16 @@
+{
+  "physical_forward": "SIMULATED_MULTIPLICATIVE_TRANSMISSION",
+  "fiducial_registration": "DIGITAL_INSTRUMENTED_ALIGNMENT_ONLY",
+  "registration_tolerance": "EMPIRICAL_THRESHOLD_DEPENDENT",
+  "content_integrity": "CONDITIONAL_ON_TRUSTED_EXPECTED_IMAGE_AND_NOISE_MODEL",
+  "known_content_origin_authentication": "FAILED_MATCHING_LAYER_CAN_BE_REPRINTED",
+  "reference_origin_authentication": "ASSUMED_EXTERNAL_NOT_IMPLEMENTED",
+  "reference_swap": "OUTSIDE_TRUST_MODEL_AND_DEFEATS_COMPARISON",
+  "exact_copy_resistance": "IMPOSSIBLE_STATIC_OBSERVATION",
+  "single_share_secrecy": "NOT_PROVIDED",
+  "human_only_authentication": "NOT_ESTABLISHED",
+  "post_quantum_optical_authentication": "NOT_ESTABLISHED",
+  "ml_dsa": "NOT_EXECUTED",
+  "physical_hardware": "NOT_TESTED",
+  "human_study": "NOT_PERFORMED"
+}
