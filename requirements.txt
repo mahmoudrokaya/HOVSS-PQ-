@@ -1,0 +1,43 @@
+
+# ============================================================
+# HOVSS-PQ
+# Python Dependencies
+# ============================================================
+#
+# Research framework for:
+# - Visual Secret Sharing
+# - Post-Quantum Authentication
+# - Device-Independent Integrity Verification
+# - Optical Reconstruction
+# - Adversarial Security Evaluation
+#
+# Recommended Python: 3.10+
+#
+# Versions are not pinned yet.
+# Freeze tested versions before the Zenodo release.
+# ============================================================
+
+# Numerical computing
+numpy
+scipy
+
+# Statistical analysis and machine learning
+scikit-learn
+
+# Image processing
+Pillow
+opencv-python
+pillow-heif
+CairoSVG
+
+# Post-quantum cryptography
+pqcrypto
+
+# Scientific visualization
+matplotlib
+
+# Medical image processing
+pydicom
+
+# PDF generation
+reportlab
