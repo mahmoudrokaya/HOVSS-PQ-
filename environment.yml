@@ -1,0 +1,43 @@
+
+# ============================================================
+# HOVSS-PQ Conda Environment
+# Human-Verifiable Visual Secret Sharing through a
+# Modular Framework for Post-Quantum Authentication
+# and Device-Independent Integrity Verification
+# ============================================================
+
+name: hovss-pq
+
+channels:
+  - conda-forge
+
+dependencies:
+  # Python runtime
+  - python=3.11
+  - pip
+
+  # Numerical computing
+  - numpy
+  - scipy
+
+  # Machine learning and statistics
+  - scikit-learn
+
+  # Image processing
+  - pillow
+  - opencv
+  - cairoSVG
+
+  # Scientific visualization
+  - matplotlib
+
+  # Medical image processing
+  - pydicom
+
+  # PDF generation
+  - reportlab
+
+  # Post-quantum cryptography and image extensions
+  - pip:
+      - pqcrypto
+      - pillow-heif
