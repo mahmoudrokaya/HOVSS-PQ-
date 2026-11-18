@@ -1,0 +1,220 @@
+
+# ============================================================
+# HOVSS-PQ
+# Human-Verifiable Visual Secret Sharing
+# Git Ignore Configuration
+# ============================================================
+
+# ------------------------------------------------------------
+# 1. Python cache and compiled files
+# ------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+*.so
+*.egg
+*.egg-info/
+.eggs/
+build/
+dist/
+pip-wheel-metadata/
+
+# ------------------------------------------------------------
+# 2. Virtual environments
+# ------------------------------------------------------------
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ------------------------------------------------------------
+# 3. Python testing and coverage
+# ------------------------------------------------------------
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+*.prof
+
+# ------------------------------------------------------------
+# 4. Jupyter notebooks
+# Keep .ipynb notebooks, ignore checkpoints
+# ------------------------------------------------------------
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ------------------------------------------------------------
+# 5. IDE and editor settings
+# ------------------------------------------------------------
+.vscode/
+.idea/
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# ------------------------------------------------------------
+# 6. Operating system files
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ------------------------------------------------------------
+# 7. Temporary and intermediate files
+# ------------------------------------------------------------
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.part
+*.partial
+*.download
+~$*
+*.lock
+
+# ------------------------------------------------------------
+# 8. Runtime logs and debugging
+# ------------------------------------------------------------
+*.log
+logs/
+debug/
+crash_reports/
+
+# Preserve curated experimental logs
+!results/**/*.log
+
+# ------------------------------------------------------------
+# 9. Sensitive files and credentials
+# ------------------------------------------------------------
+.env
+.env.*
+!.env.example
+
+*.key
+*.pem
+*.p12
+*.pfx
+*.p8
+
+secrets/
+credentials/
+private_keys/
+
+# ------------------------------------------------------------
+# 10. Large generated model files
+# ------------------------------------------------------------
+*.ckpt
+*.pt
+*.pth
+*.h5
+*.hdf5
+*.onnx
+*.safetensors
+*.pb
+
+# ------------------------------------------------------------
+# 11. Unrelated literature collections
+# ------------------------------------------------------------
+Literature/
+Literature_Expanded/
+Literature_Math/
+paper_features/
+Literature_Audit/
+
+# ------------------------------------------------------------
+# 12. Temporary experimental outputs
+# ------------------------------------------------------------
+temp/
+tmp/
+scratch/
+cache/
+.cache/
+
+# ------------------------------------------------------------
+# 13. Duplicate and backup folders
+# ------------------------------------------------------------
+backup/
+backups/
+old_versions/
+previous_runs/
+
+# ------------------------------------------------------------
+# 14. Repository collection previews
+# ------------------------------------------------------------
+HOVSS_PQ_Collection_Preview/
+
+# ------------------------------------------------------------
+# 15. File-size policy
+# Git does not support size-based ignore rules.
+# The 25 MiB limit must be enforced separately.
+# ------------------------------------------------------------
+
+# ------------------------------------------------------------
+# 16. Important research artifacts
+# These should remain eligible for version control.
+# ------------------------------------------------------------
+
+!README.md
+!LICENSE
+!LICENSE-DATA-CC-BY-4.0
+!CITATION.cff
+!requirements.txt
+!environment.yml
+!.zenodo.json
+
+# Source code
+!*.py
+!*.ipynb
+!*.m
+!*.r
+!*.sh
+!*.ps1
+
+# Experimental datasets
+!*.csv
+!*.tsv
+!*.json
+!*.jsonl
+!*.npy
+!*.npz
+!*.mat
+!*.parquet
+
+# Visual cryptography images
+!*.png
+!*.jpg
+!*.jpeg
+!*.tif
+!*.tiff
+!*.bmp
+!*.svg
+
+# Experimental documentation
+!*.md
+!*.pdf
+!*.txt
+!*.xlsx
+
+# Archived experiment packages
+!*.zip
+
+# Configuration files
+!*.yaml
+!*.yml
+!*.toml
+!*.ini
+
+# ------------------------------------------------------------
+# End of HOVSS-PQ .gitignore
+# ------------------------------------------------------------
