@@ -1,0 +1,26 @@
+{
+  "project": "HOVSS-PQ",
+  "schema_version": "1.0",
+  "status": "template_not_scanned",
+  "description": "Metadata templates only. No repository files were scanned or hashed to create this archive.",
+  "inventory": {
+    "files_scanned": null,
+    "files_included": null,
+    "files_excluded": null,
+    "included_bytes": null,
+    "excluded_bytes": null
+  },
+  "policy": {
+    "max_individual_file_size_bytes": 26214400,
+    "prefer_zip_when_content_identical": true,
+    "hash_algorithm": "sha256"
+  },
+  "source_repository": null,
+  "scan_timestamp_utc": null,
+  "manifest_verified": false,
+  "notes": [
+    "Populate manifest.csv from actual repository files and computed SHA-256 digests.",
+    "Populate excluded_files.csv from actual exclusions; do not infer exclusions from filenames alone.",
+    "Replace null counts only after running a real inventory and validate them against both CSV files."
+  ]
+}
