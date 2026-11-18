@@ -1,0 +1,115 @@
+
+perturbations:
+  enabled: true
+  translation:
+    enabled: true
+    x_offsets_pixels: null
+    y_offsets_pixels: null
+    # A one-pixel displacement is reported in the manuscript,
+    # but its direction and precise protocol are not yet verified.
+  rotation:
+    enabled: false
+    angles_degrees: null
+  scaling:
+    enabled: false
+    factors: null
+  optical_noise:
+    enabled: false
+    noise_model: null
+    parameters: null
+  ink_spreading:
+    enabled: false
+    model: null
+    parameters: null
+
+metrics:
+  pixel_agreement:
+    enabled: true
+    definition: matching_pixels_divided_by_evaluated_pixels
+    evaluation_mask: null
+  pixel_error_rate:
+    enabled: true
+    definition: mismatching_pixels_divided_by_evaluated_pixels
+    evaluation_mask: null
+  image_recognizability:
+    enabled: false
+    evaluation_protocol: null
+  numerical_tolerance:
+    absolute: null
+    relative: null
+
+physical_overlay:
+  status: not_verified
+  completed: false
+  printing:
+    share_a_medium: null
+    share_b_medium: null
+    scaling_percent: null
+    calibration_bar_target_mm: null
+    calibration_bar_measured_mm: null
+  registration_marks:
+    present: null
+    alignment_method: null
+  capture:
+    camera_model: null
+    photo_path: null
+    capture_conditions: null
+  observations:
+    alignment_success: null
+    image_recognizable: null
+    visible_defects: null
+    observation_notes: null
+  # Do not substitute digital overlays for physical measurements.
+
+reported_findings:
+  # Manuscript-level observations only, not execution parameters.
+  ideal_authorized_reconstruction:
+    pixel_agreement: 1.0
+  one_pixel_displacement:
+    pixel_error_rate: 0.7492
+    direction: null
+    affected_samples: null
+    evaluation_protocol: null
+  provenance:
+    source_result_files: []
+    verified_against_raw_outputs: false
+
+outputs:
+  directory: results/generated/optical/reconstruction
+  preserve_original_artifacts: true
+  overwrite_existing_results: false
+  save_reconstructed_images: true
+  save_per_sample_metrics: true
+  save_aggregate_metrics: true
+  save_run_metadata: true
+  metrics_format: csv
+  metadata_format: json
+
+reproducibility:
+  environment_file: environment.yml
+  requirements_file: requirements.txt
+  require_source_script: true
+  require_input_mapping: true
+  require_execution_command: true
+  require_random_seed_if_used: true
+  verify_input_checksums: true
+  verify_output_checksums: true
+  reproduction_status: not_verified
+
+publication:
+  manuscript_section: 5
+  related_tables: []
+  related_figures: []
+  tables_mapping: configs/publication/tables.yaml
+  figures_mapping: configs/publication/figures.yaml
+  mapping_verified: false
+
+interpretation:
+  digital_reconstruction_implies_physical_success: false
+  reconstruction_correctness_implies_authenticity: false
+  optical_integrity_proven: false
+  human_recognizability_validated: false
+  note: >-
+    Pixel agreement under ideal digital alignment is distinct from
+    physical overlay quality, content authenticity, and unaided human
+    verification. Claims must be restricted to evaluated conditions.
