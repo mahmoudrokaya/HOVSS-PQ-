@@ -1,0 +1,54 @@
+
+cff-version: 1.2.0
+message: >-
+  If you use HOVSS-PQ, its source code, datasets,
+  experimental results, or evaluation framework,
+  please cite this research repository and the
+  associated scientific publication when available.
+
+type: software
+
+title: >-
+  HOVSS-PQ: Human-Verifiable Visual Secret Sharing
+  through a Modular Framework for Post-Quantum
+  Authentication and Device-Independent Integrity
+  Verification
+
+abstract: >-
+  HOVSS-PQ is a modular research framework for
+  investigating human-verifiable visual secret sharing,
+  post-quantum issuer authentication, and
+  device-independent integrity verification.
+  The repository provides experimental implementations,
+  datasets, mathematical validation artifacts,
+  adversarial security evaluations, optical reconstruction
+  experiments, synthetic-observer benchmarks, and
+  reproducible research results. The framework evaluates
+  confidentiality, reconstruction correctness, content
+  integrity, digital authentication, and perceptual
+  reliability as distinct security properties.
+  It provides a foundation for future development
+  and validation rather than claiming a fully secure
+  end-to-end optical authentication protocol.
+
+authors:
+  - family-names: Rokaya
+    given-names: Mahmoud Badee Mahmoud
+
+keywords:
+  - Visual Secret Sharing
+  - Visual Cryptography
+  - Post-Quantum Cryptography
+  - Human-Verifiable Authentication
+  - Device-Independent Integrity Verification
+  - ML-DSA
+  - Optical Reconstruction
+  - Content Integrity
+  - Adversarial Security
+  - Reproducible Research
+
+license: CC-BY-4.0
+
+version: 1.0.0
+
+date-released: 2026-11-18
