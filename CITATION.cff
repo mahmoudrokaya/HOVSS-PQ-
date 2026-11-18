@@ -1,54 +1,29 @@
-
 cff-version: 1.2.0
 message: >-
-  If you use HOVSS-PQ, its source code, datasets,
-  experimental results, or evaluation framework,
-  please cite this research repository and the
-  associated scientific publication when available.
-
-type: software
-
+  If you use the HOVSS-PQ research software or accompanying artifacts,
+  please cite the Zenodo archive. For exact reproducibility, cite the
+  DOI of the specific release you used.
 title: >-
-  HOVSS-PQ: Human-Verifiable Visual Secret Sharing
-  through a Modular Framework for Post-Quantum
-  Authentication and Device-Independent Integrity
-  Verification
-
-abstract: >-
-  HOVSS-PQ is a modular research framework for
-  investigating human-verifiable visual secret sharing,
-  post-quantum issuer authentication, and
-  device-independent integrity verification.
-  The repository provides experimental implementations,
-  datasets, mathematical validation artifacts,
-  adversarial security evaluations, optical reconstruction
-  experiments, synthetic-observer benchmarks, and
-  reproducible research results. The framework evaluates
-  confidentiality, reconstruction correctness, content
-  integrity, digital authentication, and perceptual
-  reliability as distinct security properties.
-  It provides a foundation for future development
-  and validation rather than claiming a fully secure
-  end-to-end optical authentication protocol.
-
+  Human-Verifiable Visual Secret Sharing through a Modular Framework
+  for Post-Quantum Authentication and Device-Independent Integrity Verification
+type: software
 authors:
   - family-names: Rokaya
     given-names: Mahmoud Badee Mahmoud
-
+repository-code: https://github.com/mahmoudrokaya/HOVSS-PQ-
+doi: 10.5281/zenodo.24351103
+url: https://doi.org/10.5281/zenodo.24351103
 keywords:
-  - Visual Secret Sharing
-  - Visual Cryptography
-  - Post-Quantum Cryptography
-  - Human-Verifiable Authentication
-  - Device-Independent Integrity Verification
-  - ML-DSA
-  - Optical Reconstruction
-  - Content Integrity
-  - Adversarial Security
-  - Reproducible Research
-
-license: CC-BY-4.0
-
-version: 1.0.0
-
-date-released: 2026-11-18
+  - visual secret sharing
+  - visual cryptography
+  - integrity verification
+  - post-quantum authentication
+  - reproducibility
+  - optical reconstruction
+abstract: >-
+  Research software, configurations, and reproducibility artifacts for
+  evaluating human-verifiable visual secret sharing, content-integrity
+  verification, adversarial attacks, optical reconstruction, and
+  post-quantum electronic authentication. Computational and simulated
+  evaluations are distinguished from outstanding physical-overlay and
+  human-participant validation.
