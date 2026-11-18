@@ -1,0 +1,122 @@
+  measured_calibration_bar_mm: null
+  paper_size: null
+  printable_margin_mm: null
+  share_a_medium: null
+  share_b_medium: null
+  background_medium: null
+
+simulation:
+  enabled: true
+  rendering_method: null
+  resampling_method: null
+  random_seed: null
+  registration:
+    method: null
+    reference_markers: null
+    translation_x_pixels: null
+    translation_y_pixels: null
+    rotation_degrees: null
+    scale_x: null
+    scale_y: null
+    perspective_transform: null
+  print_distortions:
+    enabled: false
+    ink_spread_radius_pixels: null
+    dot_gain_fraction: null
+    blur_sigma_pixels: null
+    geometric_jitter_pixels: null
+    contrast_change: null
+    opacity_share_a: null
+    opacity_share_b: null
+    noise_model: null
+    noise_parameters: null
+  optical_overlay:
+    composition_operator: null
+    supported_digital_operators:
+      - OR
+      - XOR
+    transparency_model: null
+    illumination_model: null
+
+scenarios:
+  baseline_ideal_alignment:
+    enabled: true
+    overrides:
+      registration:
+        translation_x_pixels: 0
+        translation_y_pixels: 0
+        rotation_degrees: 0
+        scale_x: 1.0
+        scale_y: 1.0
+  one_pixel_displacement:
+    enabled: true
+    # The historical direction and operator require verification.
+    overrides:
+      registration:
+        translation_x_pixels: null
+        translation_y_pixels: null
+  physical_print_pilot:
+    enabled: false
+    status: not_completed
+    sample_ids: []
+    observation_file: null
+    photograph_files: []
+
+measurements:
+  registration_success_definition: null
+  recognizable_image_definition: null
+  calibration_error_mm: null
+  metrics:
+    - pixel_agreement
+    - pixel_error_rate
+    - alignment_error_pixels
+    - calibration_bar_error_mm
+  observer_assessment:
+    method: null
+    participant_count: null
+    status: not_completed
+
+reported_findings:
+  # Manuscript-level observations, not execution settings.
+  ideal_digital_reconstruction:
+    pixel_agreement: 1.0
+  one_pixel_displacement:
+    pixel_error_rate: 0.7492
+  provenance:
+    source_result_files: []
+    verified_against_raw_outputs: false
+
+outputs:
+  directory: results/generated/print_simulation
+  overwrite_existing: false
+  preserve_original_artifacts: true
+  save_simulated_overlays: true
+  save_metrics: true
+  save_parameters: true
+  image_format: png
+  metrics_format: csv
+  metadata_format: json
+
+reproducibility:
+  environment_file: environment.yml
+  requirements_file: requirements.txt
+  record_execution_command: true
+  record_random_seed: true
+  verify_input_checksums: true
+  verify_output_checksums: true
+  compare_with_archived_results: true
+  absolute_tolerance: null
+  relative_tolerance: null
+  status: not_verified
+
+publication:
+  manuscript_section: 5
+  related_tables: []
+  related_figures: []
+  mapping_verified: false
+
+claim_boundaries:
+  digital_simulation_is_physical_measurement: false
+  physical_overlay_validation_completed: false
+  simulated_recognizability_is_human_validation: false
+  optical_reconstruction_proves_content_authenticity: false
