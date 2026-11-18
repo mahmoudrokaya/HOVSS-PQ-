@@ -1,0 +1,104 @@
+  image_count_reported: 546
+  input_sha256_verified: false
+
+study_design:
+  conditions_reported: 9
+  condition_definitions: []
+  synthetic_observers_per_condition_reported: 100
+  repetitions_reported: 10
+  decisions_reported: 4914000
+  decision_count_formula: '546 * 9 * 100 * 10'
+  sampling_with_replacement: null
+  observer_independence_assumption: null
+  observer_parameter_sampling: null
+  repeated_measurements_grouping: null
+  class_balance: null
+
+observer_model:
+  family: null
+  implementation: null
+  model_version: null
+  input_features: []
+  noise_model: null
+  perception_threshold: null
+  decision_rule: null
+  threshold_selection_procedure: null
+  calibration_dataset: null
+  training_dataset: null
+  test_dataset: null
+  leakage_controls: []
+
+conditions:
+  authentic_baseline: null
+  manipulated_variants: []
+  optical_disturbances: []
+  registration_disturbances: []
+  note: >-
+    The nine evaluated conditions must be recovered from the original
+    scripts or archived experimental records; they are not defined here.
+
+metrics:
+  reported:
+    roc_auc: 0.998168498
+    balanced_accuracy_approx: 0.9982
+  calculate:
+    - roc_auc
+    - balanced_accuracy
+    - confusion_matrix
+    - false_acceptance_rate
+    - false_rejection_rate
+  positive_class_definition: null
+  score_direction: null
+  aggregation_unit: null
+  confidence_interval_method: null
+  confidence_level: null
+  bootstrap_unit: null
+  uncertainty_note: >-
+    Repeated decisions on the same image or observer realization may be
+    dependent. Do not treat all 4,914,000 decisions as independent samples
+    when estimating uncertainty.
+
+outputs:
+  directory: results/generated/synthetic_observers
+  overwrite_existing: false
+  preserve_original_results: true
+  decisions_csv: null
+  per_image_metrics_csv: null
+  aggregate_metrics_json: null
+  roc_curve_file: null
+  confusion_matrix_file: null
+  output_manifest: null
+
+reproducibility:
+  require_source_script: true
+  require_exact_input_mapping: true
+  require_random_seed_record: true
+  require_observer_model_definition: true
+  require_condition_definitions: true
+  verify_input_checksums: true
+  verify_output_checksums: true
+  compare_with_archived_results: true
+  numerical_tolerance_absolute: null
+  numerical_tolerance_relative: null
+  reproduction_status: not_verified
+
+human_study_boundary:
+  human_participants_tested_in_this_experiment: 0
+  human_observer_validation_completed: false
+  planned_human_study_config: configs/perception/human_study_protocol.yaml
+  inference_limit: >-
+    Strong synthetic-observer discrimination does not demonstrate equivalent
+    human perceptual accuracy or real-world optical robustness.
+
+publication:
+  manuscript_section: 5
+  table_mapping: configs/publication/tables.yaml
+  figure_mapping: configs/publication/figures.yaml
+  mapping_verified: false
+  result_values_verified_against_raw_outputs: false
+
+references:
+  - title: 'scikit-learn: ROC AUC score'
+    url: 'https://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html'
+  - title: 'scikit-learn: Balanced accuracy score'
+    url: 'https://scikit-learn.org/stable/modules/generated/sklearn.metrics.balanced_accuracy_score.html'
