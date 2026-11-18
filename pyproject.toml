@@ -1,0 +1,115 @@
+
+# ============================================================
+# HOVSS-PQ — Python Project Configuration
+# ============================================================
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hovss-pq"
+version = "1.0.0"
+
+description = "A modular research framework for human-verifiable visual secret sharing, post-quantum authentication, and device-independent integrity verification."
+
+readme = "README.md"
+requires-python = ">=3.10"
+
+# Add the agreed author list before publication.
+authors = [
+    {name = "Mahmoud Badee Mahmoud Rokaya"}
+]
+
+keywords = [
+    "visual secret sharing",
+    "visual cryptography",
+    "post-quantum cryptography",
+    "ML-DSA",
+    "human-verifiable authentication",
+    "device-independent integrity",
+    "optical reconstruction",
+    "adversarial security",
+    "reproducible research"
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Scientific/Engineering :: Image Processing",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent"
+]
+
+# Software licensing is not yet finalized.
+# CC BY 4.0 applies to research data, not automatically to code.
+
+dependencies = [
+    "numpy",
+    "scipy",
+    "scikit-learn",
+    "Pillow",
+    "opencv-python",
+    "pillow-heif",
+    "CairoSVG",
+    "pqcrypto",
+    "matplotlib",
+    "pydicom",
+    "reportlab"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-cov>=4",
+    "ruff>=0.5",
+    "build>=1",
+    "twine>=5"
+]
+
+[tool.setuptools]
+# The current repository is an experimental artifact collection,
+# not yet a verified installable Python package.
+# Disable automatic package discovery until code is reorganized.
+packages = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+filterwarnings = [
+    "ignore::DeprecationWarning"
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+extend-exclude = [
+    "archives",
+    "data",
+    "results",
+    "metadata",
+    ".venv",
+    "build",
+    "dist"
+]
+
+[tool.ruff.lint]
+select = [
+    "E4",
+    "E7",
+    "E9",
+    "F"
+]
+
+[tool.coverage.run]
+branch = true
+source = ["code"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true
+precision = 2
