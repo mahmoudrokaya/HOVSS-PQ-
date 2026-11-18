@@ -1,0 +1,46 @@
+    manuscript_caption: null
+    scientific_question: null
+    experiment_ids: []
+    source_scripts: []
+    source_data_files: []
+    archived_figure_files: []
+    generating_command: null
+    plot_type: null
+    x_axis: {label: null, unit: null}
+    y_axis: {label: null, unit: null}
+    series: []
+    preprocessing_steps: []
+    aggregation_method: null
+    uncertainty_method: null
+    random_seed: null
+    output_file: "results/generated/publication/figures/Figure_7.png"
+    verification: {source_mapping_verified: false, reproduced: false, compared_to_manuscript: false}
+
+  Figure_8:
+    manuscript_caption: null
+    scientific_question: null
+    experiment_ids: []
+    source_scripts: []
+    source_data_files: []
+    archived_figure_files: []
+    generating_command: null
+    plot_type: null
+    x_axis: {label: null, unit: null}
+    y_axis: {label: null, unit: null}
+    series: []
+    preprocessing_steps: []
+    aggregation_method: null
+    uncertainty_method: null
+    random_seed: null
+    output_file: "results/generated/publication/figures/Figure_8.png"
+    verification: {source_mapping_verified: false, reproduced: false, compared_to_manuscript: false}
+
+release_audit:
+  figures_required: [Figure_6, Figure_7, Figure_8]
+  all_mappings_verified: false
+  all_figures_reproduced: false
+  manuscript_comparison_completed: false
+  archive_ready: false
+  notes: >-
+    Populate each mapping from the final manuscript and original experimental
+    files before setting archive_ready to true.
