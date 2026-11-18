@@ -5,6 +5,16 @@ This guide accompanies *Human-Verifiable Visual Secret Sharing through a Modular
 
 The existence of this guide, configuration templates, or an archived ZIP does **not** mean all experiments have been rerun independently. A reproducibility claim requires executable source, original inputs, exact parameters, software versions, output artifacts, and successful comparison with reported results.
 
+## Repository identity and archived version
+- **GitHub:** https://github.com/mahmoudrokaya/HOVSS-PQ-
+- **Zenodo DOI displayed by the repository integration:** https://doi.org/10.5281/zenodo.24351103
+- **Zenodo badge target:** https://doi.org/10.5281/zenodo.24351102
+- **Badge:** [![DOI](https://zenodo.org/badge/1462724654.svg)](https://doi.org/10.5281/zenodo.24351102)
+
+The two identifiers are taken from the repository owner's Zenodo interface. Check the Zenodo landing pages to establish which identifier refers to the exact archived release and which covers all versions. **Do not assume a release tag, commit SHA, or archived content without checking.** A later GitHub commit does not retroactively modify an existing Zenodo release.
+
+To reproduce a published result, download the **version-specific Zenodo archive** corresponding to the manuscript, or check out the exact GitHub release tag and commit. Record both identifiers in the reproduction report.
+
 ## Expected repository structure
 
 ```text
@@ -30,7 +40,7 @@ Paths above are **intended locations**, not a claim that every artifact has been
 The manuscript describes 546 images: 500 BSDS500, 39 USC-SIPI, and seven synthetic patterns, standardized to 128 × 128 where applicable. It describes nine simulated conditions, 100 synthetic observers, ten repetitions, and a reported fixed seed of `20261116` for the benchmark. These settings must be verified against the executable C16 implementation before being treated as a complete reproduction recipe.
 
 ## Reproduction procedure
-1. Obtain the versioned GitHub release or Zenodo deposit. Record the commit, release tag, DOI (if assigned), and archive checksum.
+1. Open the archived Zenodo record, identify its **version-specific DOI**, and obtain the corresponding release snapshot. Record its GitHub release tag, commit SHA (if available), archive filename, and SHA-256 checksum. Do not use the moving `main` branch as a substitute for a fixed release.
 2. Check `metadata/manifest.csv` against actual files and review `metadata/excluded_files.csv` for missing required inputs. An empty template manifest is **not** an audit.
 3. Create the environment using `environment.yml` or `requirements.txt`, then record Python, library, operating-system, and cryptographic-backend versions. These dependency specifications must be tested against the actual scripts.
 4. Read `configs/default.yaml`, the relevant `configs/experiments/Cxx.yaml` or `Fxx.yaml`, and the applicable domain configuration. A YAML file is documentation unless the corresponding script explicitly loads it.
@@ -48,7 +58,7 @@ conda activate hovss-pq
 python -m pip install -r requirements.txt
 ```
 
-The actual Conda environment name must be read from `environment.yml`; `hovss-pq` above is illustrative.
+The actual Conda environment name must be read from `environment.yml`; `hovss-pq` above is illustrative. If the environment name differs, activate the name specified in the file.
 
 ## Manuscript artifact mapping
 
@@ -71,6 +81,9 @@ See `EXPERIMENT_INDEX.md` and `configs/publication/{tables,figures}.yaml` for tr
 - Print-ready C13 prototypes do not establish completed physical overlay measurements.
 - The C14 participant study is prospective unless dated participant-level records and required approvals establish otherwise.
 - Digital registration and full-field comparison are **instrumented baselines**, not unaided human verification.
+
+## Minimal reproduction report
+For each reproduced experiment, record: archive DOI and release tag; Git commit (when known); file hashes; Python and package versions; operating system; script path and exact command; config and random seed; input IDs; number of observations/trials; output file paths; computed metrics; comparison tolerance; and pass/fail or unresolved status. Archive this report separately from the original results.
 
 ## Verification checklist
 - [ ] All input files present and licensed for redistribution
