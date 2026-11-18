@@ -1,9 +1,16 @@
 # HOVSS-PQ — Data Availability and Provenance
 
-## Availability statement (draft; update at release)
-The HOVSS-PQ research artifacts are intended to be deposited in a versioned GitHub repository and archived through Zenodo. **A public repository URL, Zenodo DOI, and independently verified complete artifact inventory have not been supplied for this document.** Do not represent the dataset as publicly downloadable until release links and licensing are confirmed.
+## Public repository and persistent archive
+The HOVSS-PQ GitHub repository is connected to Zenodo and a DOI has been displayed in the Zenodo integration interface.
 
-The intended repository directories are `data/` (inputs and derived datasets), `results/` (experimental outputs), `archives/` (retained experiment packages), and `metadata/` (inventory, exclusions, and collection summary). Consult `../data/README.md` and `../metadata/manifest.csv` when populated.
+- **GitHub repository:** https://github.com/mahmoudrokaya/HOVSS-PQ-
+- **Zenodo DOI displayed for the repository:** https://doi.org/10.5281/zenodo.24351103
+- **DOI linked by Zenodo's generated badge:** https://doi.org/10.5281/zenodo.24351102
+- **DOI badge:** [![DOI](https://zenodo.org/badge/1462724654.svg)](https://doi.org/10.5281/zenodo.24351102)
+
+**DOI verification:** The identifiers above are reproduced from the Zenodo page supplied by the repository owner. Confirm the version-specific DOI, concept DOI, release tag, authors, and actual deposited files on the Zenodo record before citing a specific release. The DOI is not evidence that all expected datasets or outputs are included.
+
+Zenodo archives a GitHub release snapshot, not subsequent changes to the GitHub default branch. For reproducible access, use the release-specific archived record and document its release tag and commit SHA. Consult `../data/README.md` and `../metadata/manifest.csv` when populated.
 
 ## Dataset composition reported in the manuscript
 
@@ -39,12 +46,14 @@ The repository collection policy has favored ZIP archives when they replace dupl
 `LICENSE-DATA-CC-BY-4.0` is intended to govern **original material owned by the research authors only**, subject to the actual license declaration. It does not override the licenses of BSDS500, USC-SIPI, or other third-party materials. Software licensing must be declared separately in `LICENSE` and should not be inferred from the data license.
 
 ## Citation and access
-After publication, replace the placeholders below with verified release information:
+- GitHub repository: https://github.com/mahmoudrokaya/HOVSS-PQ-
+- Zenodo DOI shown in the integration interface: https://doi.org/10.5281/zenodo.24351103
+- Zenodo badge target: https://doi.org/10.5281/zenodo.24351102
+- Exact version DOI and release tag: **confirm on the archived record**
+- Manuscript DOI: **not provided; do not infer one**
+- Release commit, archive checksum, and access date: **record when independently verified**
 
-- GitHub release: **TO BE ADDED**
-- Zenodo DOI: **TO BE ADDED**
-- Manuscript DOI: **TO BE ADDED**
-- Release/commit and access date: **TO BE ADDED**
+For a paper's reproducibility statement, prefer the DOI of the exact version used. Verify that the archived ZIP contains the required inputs, scripts, and results; third-party datasets may need separate retrieval.
 
 ## References
 - [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/)
