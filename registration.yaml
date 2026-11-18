@@ -1,0 +1,106 @@
+    search_range_pixels: null
+    search_step_pixels: null
+    success_tolerance_pixels: null
+    manual_adjustment_allowed: null
+
+reconstruction:
+  operator: null
+  supported_operators: [OR, XOR]
+  ideal_alignment_baseline: true
+  verify_against_reference: true
+
+experiments:
+  one_pixel_displacement:
+    included_in_reported_findings: true
+    displacement_magnitude_pixels: 1
+    displacement_axis: null
+    direction: null
+    reconstruction_operator: null
+    boundary_handling: null
+    evaluation_mask: null
+    source_result_files: []
+  translation_sweep:
+    enabled: null
+    shifts_pixels: []
+  rotation_sweep:
+    enabled: null
+    angles_degrees: []
+  scaling_sweep:
+    enabled: null
+    factors: []
+
+metrics:
+  pixel_agreement:
+    definition: matching_evaluated_pixels_divided_by_evaluated_pixels
+  pixel_error_rate:
+    definition: mismatching_evaluated_pixels_divided_by_evaluated_pixels
+  alignment_success:
+    definition: null
+  evaluated_region:
+    method: null
+    ignore_out_of_bounds: null
+  statistical_reporting:
+    number_of_samples: null
+    confidence_interval_method: null
+    confidence_level: null
+
+reported_findings:
+  # Manuscript-level observations, NOT execution settings.
+  ideal_authorized_reconstruction:
+    pixel_agreement: 1.0
+  one_pixel_displacement:
+    pixel_error_rate: 0.7492
+  provenance:
+    source_result_files: []
+    verified_against_raw_outputs: false
+
+physical_registration:
+  validation_completed: false
+  printable_registration_marks: null
+  print_scale_percent: null
+  calibration_bar_nominal_mm: null
+  calibration_bar_measured_mm: null
+  substrate_types: []
+  capture_device: null
+  physical_observation_records: []
+  note: >-
+    Digital displacement simulations do not establish the performance
+    of physical share alignment or unaided human verification.
+
+outputs:
+  directory: results/generated/registration
+  overwrite_existing_results: false
+  preserve_original_results: true
+  save_registered_shares: true
+  save_reconstructions: true
+  save_per_sample_metrics: true
+  save_aggregate_metrics: true
+  formats: [png, csv, json]
+
+reproducibility:
+  environment_file: environment.yml
+  requirements_file: requirements.txt
+  require_source_script: true
+  require_execution_command: true
+  require_random_seed_record_if_stochastic: true
+  verify_input_checksums: true
+  verify_output_checksums: true
+  compare_with_archived_results: true
+  numerical_tolerance:
+    absolute: null
+    relative: null
+  reproduction_status: not_verified
+
+publication:
+  manuscript_section: 5
+  related_tables: []
+  related_figures: []
+  mapping_files:
+    tables: configs/publication/tables.yaml
+    figures: configs/publication/figures.yaml
+  mapping_verified: false
+
+claim_boundaries:
+  ideal_digital_reconstruction_implies_physical_robustness: false
+  pixel_error_rate_implies_human_recognition_rate: false
+  successful_registration_implies_content_authenticity: false
