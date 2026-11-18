@@ -1,0 +1,515 @@
+
+# ============================================================
+# HOVSS-PQ — DEFAULT EXPERIMENT CONFIGURATION
+# ============================================================
+#
+# Project:
+# Human-Verifiable Visual Secret Sharing through a
+# Modular Framework for Post-Quantum Authentication
+# and Device-Independent Integrity Verification
+#
+# File: configs/default.yaml
+# Version: 1.0.0
+#
+# Purpose:
+# Central configuration for experimental execution,
+# data management, evaluation, and reproducibility.
+#
+# IMPORTANT:
+# This file is a proposed common configuration.
+# It is not evidence that historical experiments
+# were executed using these settings.
+#
+# null = parameter not yet verified
+# ============================================================
+
+project:
+  name: HOVSS-PQ
+  version: "1.0.0"
+
+  title: >-
+    Human-Verifiable Visual Secret Sharing through
+    a Modular Framework for Post-Quantum Authentication
+    and Device-Independent Integrity Verification
+
+  research_domain:
+    - visual_secret_sharing
+    - post_quantum_authentication
+    - content_integrity
+    - optical_reconstruction
+    - human_verification
+
+  repository_type: research_artifacts
+
+  publication:
+    manuscript_status: in_preparation
+    publisher_target:
+      - IEEE
+      - Elsevier
+    doi: null
+    zenodo_doi: null
+
+# ------------------------------------------------------------
+# 1. CONFIGURATION PROVENANCE
+# ------------------------------------------------------------
+
+provenance:
+  type: proposed
+  historical_execution_verified: false
+
+  description: >-
+    Common repository settings proposed for future
+    standardized execution. Historical experiment
+    parameters must be recovered independently
+    from the original scripts and result records.
+
+  original_scripts_modified: false
+
+  parameter_sources: []
+
+# ------------------------------------------------------------
+# 2. REPOSITORY PATHS
+# ------------------------------------------------------------
+
+paths:
+  root: "."
+
+  code: "code"
+  configs: "configs"
+  data: "data"
+  results: "results"
+  archives: "archives"
+  metadata: "metadata"
+  documentation: "docs"
+
+  experiment_configs: "configs/experiments"
+  security_configs: "configs/security"
+  optical_configs: "configs/optical"
+  perception_configs: "configs/perception"
+  publication_configs: "configs/publication"
+
+  manifest: "metadata/manifest.csv"
+
+  # Runtime output directory
+  generated_outputs: "results/generated"
+
+  # Avoid machine-specific absolute paths.
+  use_relative_paths: true
+
+# ------------------------------------------------------------
+# 3. EXECUTION SETTINGS
+# ------------------------------------------------------------
+
+execution:
+  python_version_target: "3.11"
+
+  environment_file: "environment.yml"
+  requirements_file: "requirements.txt"
+
+  # Set from original experiment records.
+  random_seed: null
+
+  deterministic_execution: null
+
+  device: cpu
+
+  parallel_workers: 1
+
+  overwrite_existing_results: false
+
+  preserve_original_artifacts: true
+
+  logging:
+    enabled: true
+    level: INFO
+    directory: "results/generated/logs"
+
+# ------------------------------------------------------------
+# 4. DATA MANAGEMENT
+# ------------------------------------------------------------
+
+data_management:
+  maximum_file_size_mib: 25
+
+  prefer_zip_archives: true
+
+  preserve_source_structure: true
+
+  verify_sha256: true
+
+  allow_duplicate_files: false
+
+  archive_extraction:
+    automatic: false
+    verify_archive_integrity: true
+    reject_unsafe_paths: true
+
+  supported_data_formats:
+    - csv
+    - tsv
+    - json
+    - jsonl
+    - npy
+    - npz
+    - mat
+    - png
+    - jpg
+    - jpeg
+    - tif
+    - tiff
+    - zip
+
+  dataset:
+    name: null
+    source: null
+    version: null
+    license: null
+
+# ------------------------------------------------------------
+# 5. VISUAL SECRET SHARING
+# ------------------------------------------------------------
+
+visual_secret_sharing:
+  enabled: true
+
+  # Must be verified for each construction.
+  scheme: null
+
+  threshold:
+    required_shares: null
+    total_shares: null
+
+  reconstruction:
+    operator: null
+
+    supported_operators:
+      - OR
+      - XOR
+
+    pixel_expansion: null
+    output_dimensions: null
+
+  confidentiality:
+    evaluate_public_view_leakage: true
+
+    metrics:
+      - total_variation_distance
+
+  correctness:
+    evaluate_reconstruction_accuracy: true
+
+    metrics:
+      - pixel_agreement
+      - pixel_error_rate
+
+# ------------------------------------------------------------
+# 6. CONTENT INTEGRITY VERIFICATION
+# ------------------------------------------------------------
+
+integrity:
+  enabled: true
+
+  supported_constructions:
+    - masked_reference
+    - separable_tag
+    - integrated_witness
+
+  active_construction: null
+
+  content_binding:
+    required: true
+    verified_for_active_construction: false
+
+  verification:
+    reference_type: null
+    decision_threshold: null
+
+  evaluation:
+    metrics:
+      - false_acceptance_rate
+      - false_rejection_rate
+      - attack_acceptance_rate
+
+# ------------------------------------------------------------
+# 7. ADVERSARIAL SECURITY EVALUATION
+# ------------------------------------------------------------
+
+adversarial:
+  enabled: true
+
+  attack_types:
+    - share_substitution
+    - content_modification
+    - adaptive_forgery
+    - reconstruction_ambiguity
+    - reference_manipulation
+
+  attacker_knowledge: null
+
+  challenge:
+    visibility: null
+    number_of_attempts: null
+
+  repetitions: null
+
+  metrics:
+    - forgery_acceptance_rate
+    - false_acceptance_rate
+    - false_rejection_rate
+
+# ------------------------------------------------------------
+# 8. POST-QUANTUM AUTHENTICATION
+# ------------------------------------------------------------
+
+post_quantum:
+  enabled: true
+
+  standard: "NIST FIPS 204"
+  algorithm: "ML-DSA-65"
+
+  application:
+    enrollment_authentication: true
+
+  verification:
+    electronic_signature: true
+
+    # Not established by electronic verification alone.
+    optical_content_binding_proven: false
+
+  key_management:
+    publish_private_keys: false
+    publish_public_test_vectors: true
+
+    public_key_path: null
+    signature_path: null
+    enrollment_record_path: null
+
+  metrics:
+    - signature_verification_success
+    - signature_verification_failure
+
+# ------------------------------------------------------------
+# 9. OPTICAL RECONSTRUCTION
+# ------------------------------------------------------------
+
+optical:
+  enabled: true
+
+  reconstruction:
+    operator: null
+
+  registration:
+    enabled: true
+
+    horizontal_shift_pixels: null
+    vertical_shift_pixels: null
+
+    rotation_degrees: null
+    scale_factor: null
+
+  disturbances:
+    supported:
+      - pixel_displacement
+      - rotation
+      - scaling
+      - ink_spreading
+      - optical_noise
+
+    active: []
+
+  evaluation:
+    metrics:
+      - pixel_error_rate
+      - reconstruction_accuracy
+
+  physical_validation:
+    completed: false
+
+    # Physical measurements must be documented
+    # separately from computational simulations.
+    physical_observations_file: null
+
+# ------------------------------------------------------------
+# 10. PERCEPTUAL VERIFICATION
+# ------------------------------------------------------------
+
+perception:
+  enabled: true
+
+  synthetic_observers:
+    enabled: true
+
+    dataset_size: null
+    number_of_conditions: null
+    number_of_observers: null
+    repetitions: null
+
+    decision_threshold: null
+
+    metrics:
+      - roc_auc
+      - balanced_accuracy
+      - false_acceptance_rate
+      - false_rejection_rate
+
+  human_participants:
+    validation_completed: false
+
+    planned_participants: null
+    planned_trials_per_participant: null
+
+    ethics_approval_reference: null
+
+    metrics:
+      - false_acceptance_rate
+      - false_rejection_rate
+      - decision_time
+      - observer_variability
+
+# ------------------------------------------------------------
+# 11. EXPERIMENT REGISTRY
+# ------------------------------------------------------------
+
+experiments:
+  configuration_directory: "configs/experiments"
+
+  c_series:
+    prefix: C
+    first: 1
+    last: 16
+
+  f_series:
+    prefix: F
+    first: 1
+    last: 8
+
+  require_experiment_config: true
+
+  require_source_script: true
+  require_input_mapping: true
+  require_output_mapping: true
+
+  verify_historical_parameters: true
+
+# ------------------------------------------------------------
+# 12. EVALUATION AND STATISTICS
+# ------------------------------------------------------------
+
+evaluation:
+  confidence_level: null
+
+  bootstrap_repetitions: null
+
+  statistical_tests: []
+
+  metrics:
+    security:
+      - total_variation_distance
+      - attack_acceptance_rate
+      - false_acceptance_rate
+      - false_rejection_rate
+
+    reconstruction:
+      - pixel_agreement
+      - pixel_error_rate
+
+    classification:
+      - roc_auc
+      - balanced_accuracy
+
+  save_raw_results: true
+  save_summary_results: true
+
+# ------------------------------------------------------------
+# 13. MANUSCRIPT OUTPUT MAPPING
+# ------------------------------------------------------------
+
+publication_outputs:
+  section: 5
+
+  tables:
+    configuration: "configs/publication/tables.yaml"
+    identifiers:
+      - Table_2
+      - Table_3
+      - Table_4
+      - Table_5
+      - Table_6
+
+  figures:
+    configuration: "configs/publication/figures.yaml"
+    identifiers:
+      - Figure_6
+      - Figure_7
+      - Figure_8
+
+  require_verified_source_mapping: true
+
+  allow_unverified_results: false
+
+# ------------------------------------------------------------
+# 14. REPRODUCIBILITY AND AUDIT
+# ------------------------------------------------------------
+
+reproducibility:
+  enabled: true
+
+  verify_input_checksums: true
+  verify_output_checksums: true
+
+  require_environment_record: true
+
+  require_random_seed_record: true
+
+  require_execution_command: true
+
+  compare_with_published_results: true
+
+  tolerance:
+    absolute: null
+    relative: null
+
+  audit_reports:
+    directory: "metadata/reproducibility"
+
+    formats:
+      - csv
+      - json
+
+# ------------------------------------------------------------
+# 15. REPOSITORY RELEASE SETTINGS
+# ------------------------------------------------------------
+
+release:
+  target_platforms:
+    - GitHub
+    - Zenodo
+
+  version: "1.0.0"
+
+  git_tag: "v1.0.0"
+
+  archive_format: zip
+
+  maximum_individual_file_size_mib: 25
+
+  verify_manifest_before_release: true
+
+  require_license_review: true
+
+  require_sensitive_data_review: true
+
+  require_reproducibility_review: true
+
+  data_license: CC-BY-4.0
+
+  software_license: null
+
+  zenodo:
+    enabled: true
+    doi: null
+    deposition_id: null
+
+# ============================================================
+# END OF CONFIGURATION
+# ============================================================
