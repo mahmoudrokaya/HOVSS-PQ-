@@ -1,0 +1,108 @@
+    include_signature_verdict: true
+    include_issuer_key_fingerprint: true
+    include_rejection_reason: true
+    include_private_key: false
+
+adversarial_evaluation:
+  enabled: true
+  attack_scenarios:
+    - signed_payload_modification
+    - signature_bit_modification
+    - wrong_public_key
+    - signature_substitution
+    - enrollment_record_substitution
+    - unsigned_metadata_modification
+    - replay_if_protocol_supports_freshness
+  test_cases: []
+  trials_per_scenario: null
+  random_seed: null
+  controls:
+    valid_signature: true
+    invalid_signature: true
+  metrics:
+    - signature_verification_success_rate
+    - invalid_signature_rejection_rate
+    - enrollment_payload_mismatch_detection_rate
+  note: >-
+    A successful signature test does not demonstrate that
+    all unsigned metadata or optical outputs are authenticated.
+
+optical_binding_interface:
+  required_for_end_to_end_claim: true
+  authenticated_content_identifier: null
+  signed_reference_digest: null
+  signed_share_commitments: []
+  reconstruction_to_enrollment_comparison: null
+  physical_observation_verification_rule: null
+  validated_in_physical_experiment: false
+  end_to_end_optical_integrity_proven: false
+
+reported_findings:
+  electronic_verification:
+    reported_checks: 15
+    reported_passed_checks: 15
+    scope: electronic_checks_only
+  provenance:
+    source_scripts: []
+    source_result_files: []
+    verified_against_raw_outputs: false
+  interpretation: >-
+    The reported 15/15 successful electronic checks are
+    manuscript-level observations pending source verification.
+    They are not evidence of physical optical content binding.
+
+outputs:
+  directory: results/generated/post_quantum_authentication
+  preserve_original_results: true
+  overwrite_existing_results: false
+  save:
+    - verification_decisions
+    - signed_payload_digests
+    - public_key_fingerprints
+    - negative_test_results
+    - execution_metadata
+  formats:
+    - csv
+    - json
+  exclude:
+    - private_keys
+    - secret_key_material
+    - sensitive_randomness
+
+reproducibility:
+  environment_file: environment.yml
+  requirements_file: requirements.txt
+  require_source_script: true
+  require_input_mapping: true
+  require_output_mapping: true
+  require_execution_command: true
+  require_library_version: true
+  require_public_key_provenance: true
+  verify_input_checksums: true
+  verify_output_checksums: true
+  compare_with_archived_results: true
+  numerical_tolerance:
+    absolute: null
+    relative: null
+  reproduction_status: not_verified
+
+publication:
+  manuscript_section: 5
+  related_tables: []
+  related_figures: []
+  mapping_files:
+    tables: configs/publication/tables.yaml
+    figures: configs/publication/figures.yaml
+  mapping_verified: false
+
+security_claim_boundaries:
+  electronic_signature_authentication_is_optical_integrity: false
+  public_key_trust_automatically_established: false
+  signature_covers_unsigned_fields: false
+  quantum_security_of_entire_protocol_proven: false
+  human_verification_validated: false
+  note: >-
+    ML-DSA-65 provides a standardized digital-signature
+    mechanism. Overall protocol security additionally depends
+    on issuer-key trust, payload binding, enrollment design,
+    implementation security, and optical verification evidence.
