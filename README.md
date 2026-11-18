@@ -1,2 +1,7 @@
-# HOVSS-PQ-
-HOVSS-PQ: A modular research framework for human-verifiable visual secret sharing, post-quantum authentication, and device-independent integrity verification. Includes mathematical models, Python implementations, experimental datasets, adversarial evaluations, and reproducible results supporting the research paper.
+# HOVSS-PQ
+
+Code, datasets, and experimental results supporting the HOVSS-PQ research paper.
+
+See `metadata/manifest.csv` for file provenance and SHA-256 checksums.
+
+The archive requires author review before publication.
