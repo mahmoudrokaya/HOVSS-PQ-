@@ -1,0 +1,625 @@
+
+# ============================================================
+# HOVSS-PQ — INTEGRITY VERIFICATION CONFIGURATION
+# ============================================================
+#
+# File: configs/security/integrity_verification.yaml
+# Version: 1.0.0
+#
+# Purpose:
+# Specify integrity-verification constructions,
+# adversarial evaluation settings, security objectives,
+# and experimental result provenance.
+#
+# IMPORTANT:
+# This is a proposed configuration specification.
+# Historical execution parameters must be recovered
+# from the original experimental scripts and logs.
+#
+# null = not yet verified
+# ============================================================
+
+schema_version: "1.0"
+
+configuration:
+  name: integrity_verification
+  project: HOVSS-PQ
+  version: "1.0.0"
+  status: proposed
+  provenance_type: proposed
+  historical_execution_verified: false
+
+# ------------------------------------------------------------
+# 1. EXPERIMENT IDENTIFICATION
+# ------------------------------------------------------------
+
+experiment:
+  identifier: null
+  series: null
+
+  description: >-
+    Evaluation of content integrity and authentication
+    binding in visual secret sharing constructions
+    under specified adversarial capabilities.
+
+  source_scripts: []
+  source_evidence: []
+  execution_command: null
+  random_seed: null
+
+# ------------------------------------------------------------
+# 2. SECURITY OBJECTIVES
+# ------------------------------------------------------------
+
+security_objectives:
+
+  confidentiality:
+    enabled: true
+    description: >-
+      Unauthorized observations should not reveal
+      protected secret information beyond the
+      explicitly defined leakage model.
+
+  reconstruction_correctness:
+    enabled: true
+    description: >-
+      Authorized shares should reconstruct the
+      intended visual content under the specified
+      reconstruction conditions.
+
+  share_authenticity:
+    enabled: true
+    description: >-
+      Verification should distinguish authorized
+      shares from unauthorized substitutions.
+
+  content_integrity:
+    enabled: true
+    description: >-
+      Unauthorized changes to protected content
+      should be detected under the defined
+      attack and observation models.
+
+  enrollment_authenticity:
+    enabled: true
+    description: >-
+      The issuer enrollment record should be
+      authenticated using an appropriate
+      cryptographic verification mechanism.
+
+  optical_integrity:
+    enabled: true
+    description: >-
+      Integrity evidence should remain observable
+      after the specified optical reconstruction.
+
+  human_observability:
+    enabled: true
+    description: >-
+      Intended integrity differences should be
+      distinguishable by unaided human observers
+      under validated viewing conditions.
+
+# ------------------------------------------------------------
+# 3. THREAT MODEL
+# ------------------------------------------------------------
+
+threat_model:
+
+  adversary:
+    knowledge: null
+    computational_capabilities: null
+
+    access:
+      public_reference: null
+      individual_shares: null
+      verification_oracle: null
+      enrollment_record: null
+
+    capabilities:
+      - share_substitution
+      - content_modification
+      - share_replacement
+      - reference_manipulation
+      - adaptive_verification_attempts
+      - reconstruction_ambiguity_exploitation
+
+  assumptions:
+    trusted_issuer: null
+    protected_reference_storage: null
+    secure_enrollment_channel: null
+    trusted_verification_parameters: null
+
+  exclusions:
+    - unspecified_physical_side_channels
+    - attacks_outside_defined_experimental_models
+
+# ------------------------------------------------------------
+# 4. VERIFICATION CONSTRUCTIONS
+# ------------------------------------------------------------
+
+constructions:
+
+  masked_reference:
+    enabled: true
+
+    description: >-
+      Integrity evaluation using a masked reference
+      construction under the tested digital
+      verification conditions.
+
+    reference:
+      generation_method: null
+      visibility: null
+      protection_mechanism: null
+
+    content_binding:
+      mechanism: null
+      formal_security_proof_available: false
+
+    verification:
+      algorithm: null
+      acceptance_rule: null
+      threshold: null
+
+    experimental_status:
+      evaluated: true
+      exact_digital_verification: true
+      physical_validation_completed: false
+
+  separable_tag:
+    enabled: true
+
+    description: >-
+      Evaluation of a construction in which
+      verification information is separable
+      from the protected visual content.
+
+    tag:
+      generation_method: null
+      placement_method: null
+
+    content_binding:
+      mechanism: null
+      independently_secure_binding_established: false
+
+    verification:
+      algorithm: null
+      acceptance_rule: null
+      threshold: null
+
+    experimental_status:
+      evaluated: true
+      content_modification_vulnerability_observed: true
+
+  integrated_witness:
+    enabled: true
+
+    description: >-
+      Evaluation of an integrated verification
+      witness intended to relate authentication
+      evidence to reconstructed visual content.
+
+    witness:
+      generation_method: null
+      embedding_method: null
+      verification_method: null
+
+    content_binding:
+      mechanism: null
+      formal_security_proof_available: false
+
+    verification:
+      algorithm: null
+      acceptance_rule: null
+      threshold: null
+
+    experimental_status:
+      evaluated: true
+      security_target_satisfied: false
+
+# ------------------------------------------------------------
+# 5. ACTIVE VERIFICATION CONFIGURATION
+# ------------------------------------------------------------
+
+verification:
+
+  active_construction: null
+
+  input:
+    share_a: null
+    share_b: null
+    reference: null
+    enrollment_record: null
+
+  reconstruction:
+    operator: null
+    alignment_assumption: null
+
+  decision:
+    acceptance_rule: null
+    rejection_rule: null
+    threshold: null
+
+  output:
+    accepted: null
+    rejection_reason: null
+
+  execution:
+    deterministic: null
+    random_seed: null
+
+# ------------------------------------------------------------
+# 6. ADVERSARIAL TESTING
+# ------------------------------------------------------------
+
+adversarial_evaluation:
+
+  enabled: true
+
+  attack_classes:
+    - content_changing_submission
+    - share_substitution
+    - reference_manipulation
+    - adaptive_forgery
+    - reconstruction_collision
+
+  trial_generation:
+    method: null
+    number_of_trials: null
+    random_seed: null
+
+  adaptive_attacks:
+    enabled: true
+
+    challenge_visibility: null
+    number_of_attempts: null
+    feedback_available_to_adversary: null
+
+  controls:
+    authorized_reconstruction: true
+    unauthorized_modification: true
+
+  metrics:
+    - attack_acceptance_rate
+    - attack_rejection_rate
+    - false_acceptance_rate
+    - false_rejection_rate
+    - forgery_acceptance_rate
+
+# ------------------------------------------------------------
+# 7. CONFIDENTIALITY EVALUATION
+# ------------------------------------------------------------
+
+confidentiality_evaluation:
+
+  enabled: true
+
+  public_view:
+    definition: null
+    observable_variables: []
+
+  leakage:
+    metric: total_variation_distance
+    distribution_estimation_method: null
+
+  interpretation:
+    note: >-
+      Zero total variation distance establishes
+      equality only for the evaluated distributions.
+      It is not automatically a proof of universal
+      confidentiality for arbitrary inputs.
+
+# ------------------------------------------------------------
+# 8. RECONSTRUCTION AMBIGUITY
+# ------------------------------------------------------------
+
+reconstruction_ambiguity:
+
+  enabled: true
+
+  operators:
+    - OR
+    - XOR
+
+  evaluate_non_injectivity: true
+
+  input_domain: null
+  enumeration_method: null
+  collision_definition: null
+
+  security_implication: >-
+    Identical reconstructed outputs may arise
+    from distinct share configurations.
+    Therefore, recognizable reconstruction
+    alone does not establish share provenance
+    or content authenticity.
+
+  formal_impossibility_claim: false
+
+# ------------------------------------------------------------
+# 9. POST-QUANTUM ENROLLMENT INTERFACE
+# ------------------------------------------------------------
+
+post_quantum_interface:
+
+  enabled: true
+
+  standard: "NIST FIPS 204"
+  signature_algorithm: "ML-DSA-65"
+
+  purpose: issuer_enrollment_authentication
+
+  signed_payload:
+    fields: []
+    serialization_method: null
+
+  verification:
+    public_key_path: null
+    signature_path: null
+    enrollment_record_path: null
+
+  content_binding:
+    enrollment_to_visual_content: null
+    optical_binding_proven: false
+
+  interpretation: >-
+    Successful verification of an electronic
+    enrollment signature does not independently
+    establish authenticity of a physical
+    optical reconstruction.
+
+# ------------------------------------------------------------
+# 10. OPTICAL VERIFICATION INTERFACE
+# ------------------------------------------------------------
+
+optical_interface:
+
+  enabled: true
+
+  reconstruction:
+    method: null
+    operator: null
+
+  registration:
+    required: true
+    tolerance_pixels: null
+
+  disturbances:
+    - translation
+    - rotation
+    - scaling
+    - ink_spreading
+
+  verification:
+    optical_acceptance_rule: null
+    observable_integrity_signal: null
+
+  physical_validation:
+    completed: false
+    measurement_records: []
+
+# ------------------------------------------------------------
+# 11. HUMAN VERIFICATION INTERFACE
+# ------------------------------------------------------------
+
+human_verification:
+
+  objective: >-
+    Determine whether unaided observers can
+    distinguish authentic and manipulated
+    optical reconstructions.
+
+  synthetic_observers:
+    evaluated: true
+    configuration: >-
+      configs/perception/synthetic_observers.yaml
+
+  actual_human_participants:
+    validation_completed: false
+    configuration: >-
+      configs/perception/human_study_protocol.yaml
+
+  metrics:
+    - false_acceptance_rate
+    - false_rejection_rate
+    - decision_time
+    - observer_variability
+
+  synthetic_results_count_as_human_validation: false
+
+# ------------------------------------------------------------
+# 12. REPORTED EXPERIMENTAL FINDINGS
+# ------------------------------------------------------------
+#
+# These are previously reported research observations,
+# not executable configuration parameters.
+#
+# Values require confirmation against original
+# source results before the archival release.
+# ------------------------------------------------------------
+
+reported_findings:
+
+  masked_reference:
+
+    public_view:
+      total_variation_distance: 0.0
+
+    content_modification:
+      evaluated_submissions: 3072
+      rejected_submissions: 3072
+      accepted_submissions: 0
+
+    verification_scope: exact_digital
+
+  separable_tag:
+
+    content_modification:
+      evaluated_submissions: 3072
+      accepted_submissions: 3072
+      rejected_submissions: 0
+
+  integrated_witness:
+
+    content_modification:
+      evaluated_submissions: 14336
+      accepted_submissions: 2031
+
+    interpretation: >-
+      The observed acceptance of content-changing
+      submissions demonstrates that the evaluated
+      construction did not satisfy the intended
+      integrity objective under the tested conditions.
+
+  adaptive_forgery:
+
+    single_private_challenge:
+      reported_acceptance_rate: 0.500
+
+    two_adaptive_attempts:
+      reported_acceptance_rate: 0.750
+
+  provenance:
+    source_result_files: []
+    source_scripts: []
+    verified_against_raw_outputs: false
+
+# ------------------------------------------------------------
+# 13. SECURITY METRICS
+# ------------------------------------------------------------
+
+metrics:
+
+  attack_acceptance_rate:
+    definition: >-
+      Accepted adversarial submissions divided
+      by evaluated adversarial submissions.
+
+  attack_rejection_rate:
+    definition: >-
+      Rejected adversarial submissions divided
+      by evaluated adversarial submissions.
+
+  false_acceptance_rate:
+    definition: >-
+      Invalid submissions incorrectly accepted
+      divided by evaluated invalid submissions.
+
+  false_rejection_rate:
+    definition: >-
+      Valid submissions incorrectly rejected
+      divided by evaluated valid submissions.
+
+  confidentiality:
+    - total_variation_distance
+
+  reconstruction:
+    - pixel_agreement
+    - pixel_error_rate
+
+  statistical_reporting:
+    confidence_interval_method: null
+    confidence_level: null
+    number_of_repetitions: null
+
+# ------------------------------------------------------------
+# 14. OUTPUT ARTIFACTS
+# ------------------------------------------------------------
+
+outputs:
+
+  directory: "results/generated/integrity_verification"
+
+  preserve_original_results: true
+  overwrite_existing_results: false
+
+  save:
+    - verification_decisions
+    - attack_trial_records
+    - aggregate_metrics
+    - construction_comparisons
+    - experiment_metadata
+
+  formats:
+    - csv
+    - json
+
+  source_result_manifest: "metadata/manifest.csv"
+
+# ------------------------------------------------------------
+# 15. REPRODUCIBILITY
+# ------------------------------------------------------------
+
+reproducibility:
+
+  environment_file: "environment.yml"
+  requirements_file: "requirements.txt"
+
+  require_source_script: true
+  require_input_files: true
+  require_execution_command: true
+  require_random_seed_record: true
+
+  verify_input_checksums: true
+  verify_output_checksums: true
+
+  compare_with_archived_results: true
+
+  numerical_tolerance:
+    absolute: null
+    relative: null
+
+  reproduction_status: not_verified
+
+# ------------------------------------------------------------
+# 16. MANUSCRIPT TRACEABILITY
+# ------------------------------------------------------------
+
+publication:
+
+  manuscript_section: 5
+
+  related_tables:
+    - Table_2
+    - Table_3
+
+  related_figures:
+    - Figure_6
+
+  mapping_files:
+    tables: "configs/publication/tables.yaml"
+    figures: "configs/publication/figures.yaml"
+
+  mapping_status: requires_verification
+
+# ------------------------------------------------------------
+# 17. SECURITY CLAIM BOUNDARIES
+# ------------------------------------------------------------
+
+security_claims:
+
+  universal_confidentiality_proven: false
+
+  universal_content_integrity_proven: false
+
+  reconstruction_implies_authenticity: false
+
+  post_quantum_optical_integrity_proven: false
+
+  human_verification_experimentally_validated: false
+
+  end_to_end_protocol_security_proven: false
+
+  note: >-
+    The experiments identify security properties,
+    vulnerabilities, and construction requirements
+    under specified evaluation conditions.
+    They do not establish universal impossibility
+    results or a formally proven end-to-end
+    human-verifiable post-quantum authentication
+    protocol.
+
+# ============================================================
+# END OF CONFIGURATION
+# ============================================================
